@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 页面标题 -->
+    <title>ABRSM</title>
+    <!-- 移动端适配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden; /* 隐藏滚动条 */
+        }
+        /* 全屏图片容器，置顶铺满屏幕 */
+        .fullscreen-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999; /* 最高层级置顶 */
+            object-fit: cover; /* 等比例裁剪铺满全屏，不变形 */
+            /* 可选：object-fit: contain; 完整显示图片，会有黑边 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 图片文件名 fuh.jpeg，确保图片和index.html放在同一目录 -->
+    <img src="fuh.jpeg" alt="ABRSM Cover" class="fullscreen-img">
+</body>
+</html>
