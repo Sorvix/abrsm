@@ -2,9 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- 页面标题 -->
     <title>ABRSM</title>
-    <!-- 移动端适配 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         * {
@@ -13,24 +11,23 @@
             box-sizing: border-box;
         }
         html, body {
-            height: 100%;
-            overflow: hidden; /* 隐藏滚动条 */
+            min-height: 100vh;
+            /* 移除overflow: hidden，恢复滚动 */
         }
-        /* 全屏图片容器，置顶铺满屏幕 */
+        /* 全屏自适应图片，置顶完整显示 */
         .fullscreen-img {
-            position: fixed;
-            top: 0;
-            left: 0;
+            display: block;
             width: 100vw;
-            height: 100vh;
-            z-index: 9999; /* 最高层级置顶 */
-            object-fit: cover; /* 等比例裁剪铺满全屏，不变形 */
-            /* 可选：object-fit: contain; 完整显示图片，会有黑边 */
+            min-height: 100vh;
+            z-index: 9999;
+            position: relative;
+            /* 完整显示图片，不裁切，解决左右黑边遮挡 */
+            object-fit: contain;
+            background: #000; /* 空白区域填充黑色，可选删掉变白色 */
         }
     </style>
 </head>
 <body>
-    <!-- 图片文件名 fuh.jpeg，确保图片和index.html放在同一目录 -->
-    <img src="fuh.jpeg" alt="ABRSM Cover" class="fullscreen-img">
+    <img src="fuh.jpeg" alt="ABRSM" class="fullscreen-img">
 </body>
 </html>
